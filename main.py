@@ -58,13 +58,14 @@ class MyWidget(QMainWindow, Ui_MainWindow):
 
     def launch(self):
         version = Requester.ask_version()
-        if version == self.config["version"]:
-            subprocess.run([f'{self.config["working_directory"]}/{self.config["exe_file_path"]}'])
+        if version:
+            if version == self.config["version"]:
+                os.startfile(f'{self.config["working_directory"]}/{self.config["exe_file_path"]}')
 
-        else:
-            FileManager.unpack_files(Requester.ask_files())
-            ClientConfigurator.update_config("version", version)
-            subprocess.run([f'{self.config["working_directory"]}/{self.config["exe_file_path"]}'])
+            else:
+                FileManager.unpack_files(Requester.ask_files())
+                ClientConfigurator.update_config("version", version)
+                os.startfile(f'{self.config["working_directory"]}/{self.config["exe_file_path"]}')
 
     def open_directory(self):
         path = self.config["working_directory"]

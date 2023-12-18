@@ -16,3 +16,9 @@ def unpack_files(incoming_files: dict):
         f = safe_open_w(f"{config['working_directory']}/{file[0]}")
         f.write(bytes(file[1], "utf-8"))
         f.close()
+    for file in incoming_files["DELETE"]:
+        try:
+            os.remove(f"{config['working_directory']}/{file}")
+        except OSError:
+            pass
+    ClientConfigurator.update_config("exe_file_path", incoming_files["EXE"])
