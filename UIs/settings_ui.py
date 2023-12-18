@@ -63,7 +63,7 @@ class Ui_Settings_form(object):
         self.open_folder_dialog_button = QtWidgets.QToolButton(Settings_form)
         self.open_folder_dialog_button.setGeometry(QtCore.QRect(430, 100, 31, 21))
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("file-explorer-folder-libraries-icon-18298.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("images/explorer_icon.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.open_folder_dialog_button.setIcon(icon)
         self.open_folder_dialog_button.setObjectName("open_folder_dialog_button")
         self.server_url = QtWidgets.QTextEdit(Settings_form)

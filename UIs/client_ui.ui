@@ -63,7 +63,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>Star_Citizen_GATAC_Syulen_G03_4k.png</pixmap>
+     <pixmap>../images/main_image.png</pixmap>
     </property>
    </widget>
    <widget class="QWidget" name="horizontalLayoutWidget_2">

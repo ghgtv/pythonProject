@@ -36,7 +36,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(0, 0, 351, 331))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("Star_Citizen_GATAC_Syulen_G03_4k.png"))
+        self.label.setPixmap(QtGui.QPixmap("images/main_image.png"))
         self.label.setObjectName("label")
         self.horizontalLayoutWidget_2 = QtWidgets.QWidget(self.centralwidget)
         self.horizontalLayoutWidget_2.setGeometry(QtCore.QRect(-1, 370, 351, 31))

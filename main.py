@@ -3,10 +3,10 @@ import sys
 import subprocess
 import Requester
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
-from client_ui import Ui_MainWindow
+from UIs.client_ui import Ui_MainWindow
 import ClientConfigurator
 import FileManager
-from settings_ui import Ui_Settings_form
+from UIs.settings_ui import Ui_Settings_form
 import tkinter
 from tkinter import filedialog
 

@@ -120,7 +120,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>file-explorer-folder-libraries-icon-18298.png</normaloff>file-explorer-folder-libraries-icon-18298.png</iconset>
+     <normaloff>../images/explorer_icon.png</normaloff>../images/explorer_icon.png</iconset>
    </property>
   </widget>
   <widget class="QTextEdit" name="server_url">
