@@ -1,7 +1,7 @@
+import struct
+
 import ClientConfigurator
 import os
-
-config = ClientConfigurator.get_configure()
 
 
 def safe_open_w(path):
@@ -11,10 +11,21 @@ def safe_open_w(path):
     return open(path, 'wb')
 
 
+def convert_string_to_bytes(string):
+    bts = b''
+    for i in string:
+        bts += struct.pack("B", ord(i))
+    return bts
+
+
 def unpack_files(incoming_files: dict):
+    config = ClientConfigurator.get_configure()
     for file in incoming_files["UPDATE"]:
         f = safe_open_w(f"{config['working_directory']}/{file[0]}")
-        f.write(bytes(file[1], "utf-8"))
+        contain = file[1][2:len(file[1]) - 1]
+        print(contain)
+        print(convert_string_to_bytes(contain))
+        f.write(convert_string_to_bytes(contain))
         f.close()
     for file in incoming_files["DELETE"]:
         try:

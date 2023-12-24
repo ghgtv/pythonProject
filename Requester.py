@@ -5,10 +5,11 @@ import requests
 import ClientConfigurator
 import json
 
-config = ClientConfigurator.get_configure()
+
 
 
 def ask_version():
+    config = ClientConfigurator.get_configure()
     url = f"{config['server_url']}/get_server_version"
 
     data = {"username": config["username"], "password": config["password"]}
@@ -29,6 +30,7 @@ def ask_version():
 
 def ask_files():
     filesdict = {}
+    config = ClientConfigurator.get_configure()
     for address, dirs, files in os.walk(config["working_directory"]):
         for name in files:
             filesdict[os.path.join(name)] = str(datetime.fromtimestamp(

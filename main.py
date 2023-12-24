@@ -30,6 +30,7 @@ class SettingsWidget(QWidget, Ui_Settings_form):
         ClientConfigurator.update_config("username", self.login.toPlainText())
         ClientConfigurator.update_config("password", self.password.toPlainText())
         ClientConfigurator.update_config("working_directory", self.working_directory.toPlainText())
+        self.config = ClientConfigurator.get_configure()
 
     def save(self):
         self.apply()
@@ -78,6 +79,7 @@ class MyWidget(QMainWindow, Ui_MainWindow):
 
     def repair(self):
         ClientConfigurator.update_config("version", "REPAIR")
+        self.config = ClientConfigurator.get_configure()
         self.launch()
 
 
